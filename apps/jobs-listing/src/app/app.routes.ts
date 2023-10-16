@@ -18,7 +18,7 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'register',
-    loadChildren: () => import('../../../../libs/feature-auth/src/lib/auth.module').then(m => m.FeatureAuthModule),
+    loadChildren: () => import('../../../../libs/auth/feature-auth/src/lib/auth.module').then(m => m.FeatureAuthModule),
   }
 ];
 

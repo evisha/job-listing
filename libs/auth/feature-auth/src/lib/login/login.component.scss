@@ -1,0 +1,182 @@
+$main-bg-dark: #172245;
+$background-color : #F8F9FA;
+$primary: #1B41FF;
+$accent: #FF2E63;
+$positive: #00d880;
+$text-primary: #172245;
+$text-secondary: #484848;
+$text-family-title: 'Lexend';
+$text-family-regular: 'Source Sans Pro';
+$text-family-accent: 'Roboto';
+$border-color: #DBDBDB;
+$white: #FFFFFF;
+$topbar-height: 80px;
+
+.full {
+  width: 100%;
+}
+
+.half {
+  width: 50%;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+.image-container {
+  background-color: black;
+  float: left;
+  width: 31.25%;
+  height: 100%;
+  position: relative;
+  height: 100vh; // TODO Change
+}
+
+.login-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  height: 100%;
+  width: 68.75%;
+}
+
+.text-box {
+  clear: both;
+  width: 40%;
+  position: relative;
+}
+
+.separator {
+  margin: 5% 0;
+  width: 100%;
+  height: 1px;
+  background: $border-color 0% 0% no-repeat padding-box;
+  border-radius: 10px;
+}
+
+.form-field {
+  position: relative;
+  display: flex;
+  height: 60px;
+  background: $background-color 0% 0% no-repeat padding-box;
+  outline: 1px solid $border-color;
+  outline-offset: -1px;
+
+  &.field-top {
+    margin-top: 5%;
+    border-radius: 8px 8px 0 0;
+
+  }
+
+  &.field-bottom {
+    margin-bottom: 5%;
+    border-radius: 0 0 8px 8px;
+  }
+
+  &.invalid {
+    outline: 1px solid $accent;
+
+    .icon {
+      filter: invert(38%) sepia(62%) saturate(5381%) hue-rotate(326deg) brightness(99%) contrast(105%);
+    }
+  }
+}
+
+input[type=text],
+input[type=password] {
+  height: inherit;
+  width: 80%;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font: 800 18px $text-family-accent;
+  color: $text-secondary;
+  margin-left: 10px;
+}
+
+button {
+  height: 54px;
+  border-radius: 8px;
+  border: none;
+  margin: 10% 0;
+  font-family: $text-family-title;
+
+  &.active {
+    background-color: $primary;
+    color: $white
+  }
+
+  &.transparent {
+    background-color: $background-color;
+    color: $primary;
+  }
+}
+
+button[disabled] {
+  background-color: $border-color;
+  color: $white;
+}
+
+.logo {
+  width: 180px;
+  height: 59px;
+  position: absolute;
+  left: 4%;
+  top: 12%;
+}
+
+// Form Icons
+.icon {
+  height: 24px;
+  width: 24px;
+  margin: auto 3px auto 15px;
+}
+
+.show-password-icon {
+  height: 12px;
+  width: 18px;
+  margin: auto 15px auto 13px;
+  cursor: pointer;
+
+  &.selected {
+    filter: brightness(0) saturate(100%) invert(11%) sepia(90%) saturate(747%) hue-rotate(197deg) brightness(88%) contrast(97%);
+  }
+}
+
+// To allow different stylings for input text and input placeholder text. Replace if a better/more stable solution is found
+input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  font: 400 16px $text-family-regular;
+  color: $text-secondary;
+  opacity: 0.5;
+}
+
+input::-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  font: 400 16px $text-family-regular;
+  color: $text-secondary;
+  opacity: 0.5;
+}
+
+input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  font: 400 16px $text-family-regular;
+  color: $text-secondary;
+  opacity: 0.5;
+}
+
+// Workaround to prevent google autocomplete from changing the color of the input to light blue.
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px $background-color inset !important;
+  -webkit-text-fill-color: $text-secondary  !important;
+}
+
+a {
+  text-decoration: none;
+}
