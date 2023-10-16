@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rettangolo_11279" data-name="Rettangolo 11279" width="24" height="24" transform="translate(837 462)" fill="#dbdbdb" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="email_icon" transform="translate(-837 -462)" clip-path="url(#clip-path)">
+    <g id="mail-outline" transform="translate(837 464.738)">
+      <path id="Tracciato_6822" data-name="Tracciato 6822" d="M5.25,5.625h18a3,3,0,0,1,3,3V21.483a3,3,0,0,1-3,3h-18a3,3,0,0,1-3-3V8.625A3,3,0,0,1,5.25,5.625Zm18,17.143a1.288,1.288,0,0,0,1.285-1.286V8.625A1.288,1.288,0,0,0,23.25,7.339h-18A1.288,1.288,0,0,0,3.964,8.625V21.483A1.288,1.288,0,0,0,5.25,22.768Z" transform="translate(-2.25 -5.625)" fill="#dbdbdb"/>
+      <path id="Tracciato_6823" data-name="Tracciato 6823" d="M15.321,17.839a.856.856,0,0,1-.526-.181l-7.714-6a.857.857,0,1,1,1.052-1.353L15.321,15.9l7.188-5.591a.857.857,0,1,1,1.052,1.353l-7.714,6A.856.856,0,0,1,15.321,17.839Z" transform="translate(-3.321 -6.696)" fill="#dbdbdb"/>
+    </g>
+  </g>
+</svg>

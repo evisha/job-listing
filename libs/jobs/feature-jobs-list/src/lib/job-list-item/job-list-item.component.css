@@ -1,0 +1,36 @@
+.job-item {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 15px 0;
+  padding: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+a {
+  cursor: pointer;
+}
+h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.location, .company {
+  color: #666;
+}
+
+.apply-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.apply-button:hover {
+  background-color: #0056b3;
+}
+
+

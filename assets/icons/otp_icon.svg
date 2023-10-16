@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="12" viewBox="0 0 24 12">
+  <g id="otp_icon" transform="translate(0 -9)">
+    <path id="Tracciato_6975" data-name="Tracciato 6975" d="M8,17.5a1,1,0,1,1-1-1A1,1,0,0,1,8,17.5Z" transform="translate(-2 -2.5)" fill="#dbdbdb"/>
+    <path id="Tracciato_6976" data-name="Tracciato 6976" d="M13,18.5a1,1,0,1,0-1-1A1,1,0,0,0,13,18.5Z" transform="translate(-4 -2.5)" fill="#dbdbdb"/>
+    <path id="Tracciato_6977" data-name="Tracciato 6977" d="M20,17.5a1,1,0,1,1-1-1A1,1,0,0,1,20,17.5Z" transform="translate(-6 -2.5)" fill="#dbdbdb"/>
+    <path id="Tracciato_6978" data-name="Tracciato 6978" d="M28,16.5H24v2h4Z" transform="translate(-8 -2.5)" fill="#dbdbdb"/>
+    <path id="Tracciato_6979" data-name="Tracciato 6979" d="M2,9a2,2,0,0,0-2,2v8a2,2,0,0,0,2,2H22a2,2,0,0,0,2-2V11a2,2,0,0,0-2-2Zm20,2H2v8H22Z" transform="translate(0)" fill="#dbdbdb" fill-rule="evenodd"/>
+  </g>
+</svg>

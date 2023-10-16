@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="26" viewBox="0 0 24 26">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rettangolo_11293" data-name="Rettangolo 11293" width="24" height="24" transform="translate(-23145 -16918)" fill="#172245" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="notification_icon" transform="translate(-1020 -26)">
+    <g id="Gruppo_di_maschere_47" data-name="Gruppo di maschere 47" transform="translate(24165 16946)" clip-path="url(#clip-path)">
+      <g id="bell" transform="translate(-23142.75 -16918)">
+        <path id="Tracciato_6830" data-name="Tracciato 6830" d="M23.7,18.4a12.876,12.876,0,0,1-.646-4.016V11.017A8.678,8.678,0,0,0,15.441,2.3a8.226,8.226,0,0,0-3.493.383A8.036,8.036,0,0,0,8.92,4.456,8.308,8.308,0,0,0,6.882,7.283a8.551,8.551,0,0,0-.728,3.412v3.713a12.842,12.842,0,0,1-.646,4L4.5,21.392,5.309,22.5h5.915a3.372,3.372,0,0,0,6.744,0h5.915l.806-1.111L23.7,18.405Zm-7.915,5.311A1.7,1.7,0,0,1,12.9,22.524H16.27a1.585,1.585,0,0,1-.484,1.191ZM6.477,20.829l.626-1.88a14.568,14.568,0,0,0,.748-4.541V10.694a6.623,6.623,0,0,1,.586-2.727,6.756,6.756,0,0,1,4.058-3.674,6.535,6.535,0,0,1,2.784-.3,6.982,6.982,0,0,1,6.077,7.047v3.391A14,14,0,0,0,22.1,18.97l.626,1.878H6.478v-.02Z" transform="translate(-4.5 -2.251)" fill="#172245"/>
+      </g>
+    </g>
+  </g>
+</svg>

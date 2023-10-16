@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="180" height="59.294" viewBox="0 0 180 59.294">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rettangolo_11275" data-name="Rettangolo 11275" width="180" height="59.294" transform="translate(-23944 -24063)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Rettangolo_11274" data-name="Rettangolo 11274" width="180.082" height="59.65" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="logo" transform="translate(23944 24063)" clip-path="url(#clip-path)">
+    <g id="Raggruppa_9368" data-name="Raggruppa 9368" transform="translate(-23944 -24063)">
+      <path id="Tracciato_6812" data-name="Tracciato 6812" d="M0,31.9l11.554,6.829V25.545L0,18.715Z" transform="translate(0 20.918)" fill="#00d880"/>
+      <path id="Tracciato_6813" data-name="Tracciato 6813" d="M16.886,42.187l-5.777-3.414v-6.62L5.332,28.74v-19l11.554,6.829Z" transform="translate(5.96 10.892)" fill="#1b41ff"/>
+      <path id="Tracciato_6814" data-name="Tracciato 6814" d="M10.7,0v19l5.777,3.414V43.045l5.777,3.416V6.831Z" transform="translate(11.964 0)" fill="#ff2e63"/>
+      <g id="Raggruppa_9367" data-name="Raggruppa 9367" transform="translate(0 0)">
+        <g id="Raggruppa_9366" data-name="Raggruppa 9366" clip-path="url(#clip-path-2)">
+          <path id="Tracciato_6815" data-name="Tracciato 6815" d="M20.618,30.964V3.377h4.119l8.9,14.493L42.688,3.377h3.884V30.964h-4.2V19.424q0-2.6.1-4.78t.29-4.235L34.8,22.766H32.235l-7.81-12.318q.194,1.944.292,4.1t.1,4.877V30.964Z" transform="translate(23.044 3.775)" fill="#fff"/>
+          <path id="Tracciato_6816" data-name="Tracciato 6816" d="M46.167,27.375a11.355,11.355,0,0,1-5.576-1.34,9.9,9.9,0,0,1-3.808-3.672,8.729,8.729,0,0,1-1.376-4.9,11.5,11.5,0,0,1,1.34-5.652,9.8,9.8,0,0,1,3.691-3.808,10.679,10.679,0,0,1,5.381-1.419,9.21,9.21,0,0,1,8.1,4.818,9.755,9.755,0,0,1,1.146,5.089l-.036,1.711H39.409a5.5,5.5,0,0,0,2.27,3.9,7.332,7.332,0,0,0,4.879,1.614,7.717,7.717,0,0,0,2.814-.506,9.963,9.963,0,0,0,2.819-1.825l2.018,2.836A10.917,10.917,0,0,1,50.561,26.5a11.926,11.926,0,0,1-4.394.875m-.347-17.1q-5.244,0-6.258,4.739H50.986v-.271a4.522,4.522,0,0,0-.853-2.293,5.326,5.326,0,0,0-1.868-1.592,5.254,5.254,0,0,0-2.446-.582" transform="translate(39.572 7.363)" fill="#fff"/>
+          <path id="Tracciato_6817" data-name="Tracciato 6817" d="M50.173,30.963v-16.9H45.938V10.177h4.235v-6.8h4v6.8h4.739v3.886H54.176v16.9Z" transform="translate(51.342 3.775)" fill="#fff"/>
+          <path id="Tracciato_6818" data-name="Tracciato 6818" d="M53.791,27.375V6.588h4.04v4.273a8.077,8.077,0,0,1,2.6-3.049,6.115,6.115,0,0,1,3.615-1.224,6.582,6.582,0,0,1,1.262.116,4.746,4.746,0,0,1,.953.271l-1.05,4.354A6.991,6.991,0,0,0,64.184,11a4.814,4.814,0,0,0-1.108-.136,4.978,4.978,0,0,0-2.584.7,5.5,5.5,0,0,0-1.923,1.9,5.016,5.016,0,0,0-.739,2.681V27.375Z" transform="translate(60.119 7.363)" fill="#fff"/>
+          <rect id="Rettangolo_11273" data-name="Rettangolo 11273" width="4.002" height="20.787" transform="translate(130.307 13.951)" fill="#fff"/>
+          <path id="Tracciato_6819" data-name="Tracciato 6819" d="M66.322,30.963V3.377h4V19.308l9.208-9.131h5.4l-9.559,8.975L85.538,30.963H80.409l-7.871-9.169-2.213,2.1v7.071Z" transform="translate(74.125 3.775)" fill="#fff"/>
+          <path id="Tracciato_6820" data-name="Tracciato 6820" d="M86.515,27.375a11.349,11.349,0,0,1-5.576-1.34,9.888,9.888,0,0,1-3.808-3.672,8.713,8.713,0,0,1-1.379-4.9,11.5,11.5,0,0,1,1.34-5.652,9.817,9.817,0,0,1,3.691-3.808,10.691,10.691,0,0,1,5.381-1.419,9.209,9.209,0,0,1,8.1,4.818,9.8,9.8,0,0,1,1.146,5.089l-.038,1.711H79.755a5.508,5.508,0,0,0,2.272,3.9A7.33,7.33,0,0,0,86.9,23.724a7.72,7.72,0,0,0,2.816-.506,9.926,9.926,0,0,0,2.816-1.825l2.022,2.836A10.916,10.916,0,0,1,90.907,26.5a11.907,11.907,0,0,1-4.392.875m-.349-17.1q-5.244,0-6.256,4.739H91.335v-.271a4.524,4.524,0,0,0-.856-2.293,5.3,5.3,0,0,0-4.314-2.175" transform="translate(84.665 7.363)" fill="#fff"/>
+          <path id="Tracciato_6821" data-name="Tracciato 6821" d="M66.139,5.774a2.4,2.4,0,1,1-2.4-2.4,2.4,2.4,0,0,1,2.4,2.4" transform="translate(68.564 3.775)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

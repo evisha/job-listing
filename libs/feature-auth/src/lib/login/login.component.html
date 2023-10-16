@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="image-container"></div>
+    <div class="login-container">
+        <div class="text-box">
+            <h1> Sign in</h1>
+            <div class="separator"></div>
+            <div class="form-section">
+                <h3 class="block font-regular txt-m txt-secondary txt-regular"> Access your account </h3>
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" autocomplete="off">
+                    <div class="form-field full field-top" [ngClass]="{'invalid': loginForm.get('email')!.invalid && loginForm.get('email')!.dirty }">
+                        <img alt="email-icon" src="./assets/icons/email_icon.svg" class="icon">
+                        <input id="email" autocomplete="off" type="text" formControlName="email" placeholder="E-mail">
+                    </div>
+                    <div class="form-field full field-bottom" [ngClass]="{'invalid': loginForm.get('password')!.invalid && loginForm.get('password')!.dirty }">
+                        <input id="password" autocomplete="off" [type]="hide ? 'password' : 'text'" formControlName="password" placeholder="Password">
+                    </div>
+                    <button class="full active" type="submit">ACCESS</button>
+                </form>
+                <div class="separator"></div>
+                <span class="font-regular txt-s txt-primary txt-regular block align-center">Don't have an account?
+                    <a class="txt-bold" [routerLink]="['/register']" >Register</a></span>
+            </div>
+        </div>
+    </div>
+</div>

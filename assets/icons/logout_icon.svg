@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15.429" height="18" viewBox="0 0 15.429 18">
+  <g id="logout_icon" transform="translate(-4.5 -2.25)">
+    <path id="Tracciato_6956" data-name="Tracciato 6956" d="M5.786,20.25H13.5a1.287,1.287,0,0,0,1.286-1.286V17.036H13.5v1.929H5.786V3.536H13.5V5.464h1.286V3.536A1.287,1.287,0,0,0,13.5,2.25H5.786A1.287,1.287,0,0,0,4.5,3.536V18.964A1.287,1.287,0,0,0,5.786,20.25Z" fill="#1b41ff"/>
+    <path id="Tracciato_6957" data-name="Tracciato 6957" d="M18.055,18.055l2.306-2.305H11.25V14.464h9.111l-2.305-2.305.909-.909,3.857,3.857-3.857,3.857Z" transform="translate(-2.893 -3.857)" fill="#1b41ff"/>
+  </g>
+</svg>

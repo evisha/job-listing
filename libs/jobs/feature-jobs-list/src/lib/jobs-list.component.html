@@ -1,0 +1,25 @@
+<ng-container *ngIf="true; else isLoading">
+  <ng-container *ngIf="jobs.length > 0; else noJobs">
+    <div class="job-list">
+      <app-article-list-item
+        data-e2e-id="article-list"
+        (navigateToJob)="navigateToJob($event)"
+        (unFavorite)="unFavorite($event)"
+        (favorite)="favorite($event)"
+        *ngFor="let job of jobs "
+        [job]="job">
+      </app-article-list-item>
+    </div>
+
+    <app-pager (setPage)="setPage($event)" [currentPage]="1"
+               [totalPages]="[0,1,2,3]"></app-pager>
+  </ng-container>
+
+  <ng-template #noJobs>
+    <div>No jobs are here... yet.</div>
+  </ng-template>
+</ng-container>
+
+<ng-template #isLoading>
+  <div>Loading jobs...</div>
+</ng-template>
