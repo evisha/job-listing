@@ -1,12 +1,12 @@
 <ng-container *ngIf="true; else isLoading">
-  <ng-container *ngIf="jobs.length > 0; else noJobs">
+  <ng-container *ngIf="[jobs$ | async].length > 0; else noJobs">
     <div class="job-list">
       <app-article-list-item
         data-e2e-id="article-list"
         (navigateToJob)="navigateToJob($event)"
         (unFavorite)="unFavorite($event)"
         (favorite)="favorite($event)"
-        *ngFor="let job of jobs "
+        *ngFor="let job of jobs$ | async "
         [job]="job">
       </app-article-list-item>
     </div>

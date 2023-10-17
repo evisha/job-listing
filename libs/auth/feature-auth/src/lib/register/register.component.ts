@@ -22,6 +22,7 @@ import {
   authState,
   onAuthStateChanged
 } from '@angular/fire/auth';
+import {AuthService} from "../../../../data-access/src/lib/services/auth.service";
 
 @Component({
   selector: 'app-register',
@@ -35,8 +36,10 @@ export class RegisterComponent implements OnInit {
   constructor(
     private _fb: FormBuilder,
     private router: Router,
-    private auth: Auth,
-  ) { }
+    private _auth: Auth,
+    private aus: AuthService
+  ) {
+  }
 
   ngOnInit(): void {
     this.loginForm = this._fb.group({
@@ -47,38 +50,23 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(): void {
-
+    // Initialize Firebase Authentication and get a reference to the service
     const credentials = {
+      auth: this._auth,
       username: this.loginForm.get('email')!.value,
       password: this.loginForm.get('password')!.value
     }
 
-    // Initialize Firebase Authentication and get a reference to the service
-    createUserWithEmailAndPassword(this.auth, credentials.username, credentials.password)
-      .then((userCredential) => {
-        console.log(11, userCredential)
-        // Signed up
-        const user = userCredential.user;
-        //this.fillCache(userCredential.user);
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
-      });
+    this.aus.register(credentials).subscribe((userCredential) => {
+      console.log(11, userCredential)
+      // Signed up
+      const user = userCredential.user;
+      // ...
+    }, (error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+    })
 
-  }
-
-  private fillCache(response: any) {
-    localStorage.setItem('at', response?.token?.access_token || '');
-    localStorage.setItem('rt', response?.token?.refresh_token || '');
-/*    localStorage.setItem('username', response?.first_name + ' ' + response?.last_name);
-    localStorage.setItem('roles', response?.roles?.reduce((a: any, c: any) => {
-      return a = !!a ? (a + ' , ' + c.name) : c.name;
-    }, ''));
-    localStorage.setItem('functions', response?.functions?.reduce((a: any, c: any) => {
-      return a = !!a ? (a + ',' + c.name) : c.name;
-    }, ''));*/
   }
 }
+

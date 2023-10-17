@@ -1,15 +1,12 @@
 import { Routes } from '@angular/router';
-/*import { provideEffects } from '@ngrx/effects';
-import { provideState } from '@ngrx/store';
-import { articleEffects, articleFeature, articlesEffects } from '@realworld/articles/data-access';
-import { ArticleGuardService } from './article-guard.service';*/
 import { JobDetailsComponent } from './job-details.component';
+import {AppAuthGuard} from "../../../../auth/data-access/src/lib/services/auth-guard";
 
 export const JOB_ROUTES: Routes = [
   {
     path: ':slug',
     component: JobDetailsComponent,
     //providers: [],
-    //canActivate: [],
+    canActivate: [AppAuthGuard],
   },
 ];

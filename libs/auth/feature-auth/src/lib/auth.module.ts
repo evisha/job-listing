@@ -7,7 +7,7 @@ import {getFirestore, provideFirestore} from "@angular/fire/firestore";
 import {getAuth, provideAuth} from "@angular/fire/auth";
 import {getStorage, provideStorage} from "@angular/fire/storage";
 import {RegisterComponent} from "./register/register.component";
-import {Router, RouterModule} from "@angular/router";
+import { RouterModule} from "@angular/router";
 
 @NgModule({
   providers: [],

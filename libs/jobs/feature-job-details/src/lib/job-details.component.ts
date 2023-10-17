@@ -18,7 +18,7 @@ export class JobDetailsComponent implements OnInit, OnDestroy {
   }
 /* // private readonly store = inject(Store);
 
-  article$ = this.store.select(articleQuery.selectData);
+  job$ = this.store.select(articleQuery.selectData);
   canModify = false;
   isAuthenticated$ = this.store.select(selectLoggedIn);
   structure$ = this.store.select(ngrxFormsQuery.selectStructure);

@@ -1,7 +1,6 @@
 import {Route, RouterModule} from '@angular/router';
 import {JobsListComponent} from "../../../../libs/jobs/feature-jobs-list/src";
 
-
 export const appRoutes: Route[] = [
   {
     path: '',
@@ -19,6 +18,10 @@ export const appRoutes: Route[] = [
   {
     path: 'register',
     loadChildren: () => import('../../../../libs/auth/feature-auth/src/lib/auth.module').then(m => m.FeatureAuthModule),
-  }
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import("../../../../libs/profile/feature-profile/src").then((m) => m.FeatureProfileModule),
+  },
 ];
 

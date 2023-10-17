@@ -23,7 +23,10 @@
       "@jobs-app/auth/feature-auth": ["libs/auth/feature-auth/src/index.ts"],
       "@jobs-app/components": ["libs/ui/components/src/index.ts"],
       "@jobs-app/data-models": ["libs/jobs/data-models/src/index.ts"],
-      "@jobs-app/jobs": ["libs/jobs/src/index.ts"]
+      "@jobs-app/jobs": ["libs/jobs/src/index.ts"],
+      "@jobs-app/profile/feature-profile": [
+        "libs/profile/feature-profile/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

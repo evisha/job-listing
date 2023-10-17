@@ -10,8 +10,9 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import {AuthenticationRoutingModule} from "../../../../libs/auth/feature-auth/src/lib/auth-routes.module";
+import { AuthRoutesModule,} from "../../../../libs/auth/feature-auth/src/lib/auth-routes.module";
 import {FeatureAuthModule} from "../../../../libs/auth/feature-auth/src/lib/auth.module";
+import {ProfileRoutesModule} from "../../../../libs/profile/feature-profile/src/lib/profile.routes";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {FeatureAuthModule} from "../../../../libs/auth/feature-auth/src/lib/auth
   imports: [
     BrowserModule,
     FeatureAuthModule,
-    AuthenticationRoutingModule,
+    AuthRoutesModule,
+    ProfileRoutesModule,
     RouterModule.forRoot(appRoutes),
     StoreModule.forRoot(
       {},

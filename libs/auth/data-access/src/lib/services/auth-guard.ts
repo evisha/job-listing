@@ -1,21 +1,50 @@
-import { inject } from '@angular/core';
-import { Router } from '@angular/router';
-import { map, take } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree} from '@angular/router';
+import {Observable} from 'rxjs';
 
-import { LocalStorageJwtService } from './local-storage-jwt.service';
+/**
+ * AuthGuard will watch firstly on redux userinfo, and if not localstorage token.
+ */
+@Injectable({
+  providedIn: 'root'
+})
+export class AppAuthGuard implements CanActivate {
+  constructor(private router: Router) {
+  }
 
-export const authGuard = () => {
-  const router = inject(Router);
-  const storage = inject(LocalStorageJwtService);
+  canActivate(
+    next: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    if (!localStorage.getItem('accessToken') && !localStorage.getItem('refreshToken')) {
+      return this.router.navigateByUrl('/login');
+    } else {
+      return !!localStorage.getItem('accessToken') && !!localStorage.getItem('refreshToken');
+    }
+  }
+}
 
-  return storage.getItem().pipe(
-    map((token) => {
-      if (!token) {
-        router.navigate(['/login']);
-        return false;
-      }
-      return true;
-    }),
-    take(1),
-  );
-};
+/**
+ * Roles Guard will watch directly on redux userinfo for existing user and if exist will watch for
+ * ROLES
+ */
+@Injectable({
+  providedIn: 'root'
+})
+export class RolesGuard implements CanActivate {
+  constructor(private router: Router) {
+  }
+
+  canActivate(
+    next: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+
+    /**
+     * Check for existing localStorage,
+     * Make call to get USER INFO DATA
+     * If userinfo role is same as 'ADMIN' => return true, else false
+     */
+    return true;
+  }
+
+}
+

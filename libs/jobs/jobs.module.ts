@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {JobsListComponent} from "./feature-jobs-list/src";
+import {StoreModule} from "@ngrx/store";
+import {articleListFeature} from "./data-access/src";
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, StoreModule.forRoot({ rootState: articleListFeature }),],
   declarations: []
 })
 export class JobsModule {}

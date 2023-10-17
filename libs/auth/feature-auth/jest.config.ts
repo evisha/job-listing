@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'auth-feature-auth',
+  displayName: 'feature-auth',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   coverageDirectory: '../../../coverage/libs/auth/feature-auth',

@@ -1,21 +1,17 @@
-import { Injectable, inject } from '@angular/core';
-import { Observable } from 'rxjs';
-import {signInWithEmailAndPassword} from "@angular/fire/auth";
+import { Injectable } from '@angular/core';
+import {Observable, of} from 'rxjs';
+import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from "@angular/fire/auth";
+import {LoginUserRequest, RegisterUserRequest} from "../data-models/user.model";
 
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
-/*  user(): Observable<any> {
-    //return this.apiService.get<any>('/user');
-  }*/
-
-  login(credentials): Promise<any> {
-    return signInWithEmailAndPassword(credentials.auth, credentials.username, credentials.password)
-    //return this.apiService.post<any, any>('/users/login', { user: credentials });
+  register(credentials: RegisterUserRequest): Observable<any> {
+    return of(createUserWithEmailAndPassword(credentials.auth, credentials.username, credentials.password))
   }
 
-/*  register(credentials): Observable<any> {
-    //return this.apiService.post<any, any>('/users', { user: credentials });
-  }*/
+  login(credentials: LoginUserRequest): Promise<any> {
+    return signInWithEmailAndPassword(credentials.auth, credentials.username, credentials.password);
+  }
 }

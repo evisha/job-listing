@@ -1,0 +1,33 @@
+<div class="profile-page profile-container">
+  <div class="profile-info">
+      <div class="row">
+        <div class="profile-picture">
+          <img class="user-img" src="assets/icons/settings_icon.svg" />
+          <div class="profile-info">
+            <h1>John Doe</h1>
+            <p><span>Email:</span> johndoe@example.com</p>
+            <p><span>Location:</span> New York, USA</p>
+            <p><span>Joined:</span> January 1, 20XX</p>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-10 offset-md-1">
+        <div class="jobs-sections">
+          <h3> My Jobs </h3>
+          <input class="search-input" [(ngModel)]="searchTerm" placeholder="Search for job positions" (input)="searchJobs()">
+          <ul>
+            <li class="job-card job-item" *ngFor="let job of jobs$">
+              <p class="job-title">{{ job.title}}</p>
+              <p class="job-description"> Description: {{ job.description}}</p>
+              <p class="job-location">Location: {{ job.location}} </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

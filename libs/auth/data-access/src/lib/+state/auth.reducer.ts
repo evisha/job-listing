@@ -19,7 +19,7 @@ export interface AuthPartialState {
 export const authAdapter: EntityAdapter<AuthEntity> =
   createEntityAdapter<AuthEntity>();
 
-export const initialAuthState: AuthState = authAdapter.getInitialState({
+export const initialAuthState: EntityState<AuthEntity> & { loaded: boolean } = authAdapter.getInitialState({
   // set initial required properties
   loaded: false,
 });

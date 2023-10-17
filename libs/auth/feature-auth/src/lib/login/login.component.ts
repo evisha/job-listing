@@ -23,6 +23,8 @@ import {
   onAuthStateChanged
 } from '@angular/fire/auth';
 import {AuthService} from "../../../../data-access/src/lib/services/auth.service";
+import {Store} from "@ngrx/store";
+import { AuthState} from "@jobs-app/auth/data-access";
 
 @Component({
   selector: 'app-login',
@@ -37,7 +39,8 @@ export class LoginComponent implements OnInit {
     private _fb: FormBuilder,
     private router: Router,
     private _auth: Auth,
-    private aus: AuthService
+    private aus: AuthService,
+    private store: Store<AuthState>
   ) { }
 
   ngOnInit(): void {
@@ -57,8 +60,9 @@ export class LoginComponent implements OnInit {
     }
     this.aus.login(credentials).then((userCredential) => {
       // Signed up
-      const user = userCredential.user;
-      //this.fillCache(userCredential.user);
+      const user = userCredential;
+      console.log(userCredential)
+      this.fillCache(userCredential.user);
       // ...
     })
       .catch((error) => {
@@ -68,8 +72,17 @@ export class LoginComponent implements OnInit {
       });
   }
 
-/*  private fillCache(response: any) {
-    localStorage.setItem('at', response?.token?.access_token || '');
-    localStorage.setItem('rt', response?.token?.refresh_token || '');
-  }*/
+  private fillCache(response: any) {
+
+    localStorage.setItem('accessToken', response?.accessToken || '');
+    localStorage.setItem('refreshToken', response?.refreshToken || '');
+/*    localStorage.setItem('username', response?.first_name + ' ' + response?.last_name);
+    localStorage.setItem('roles', response?.roles?.reduce((a: any, c: any) => {
+      return a = !!a ? (a + ' , ' + c.name) : c.name;
+    }, ''));
+    localStorage.setItem('functions', response?.functions?.reduce((a: any, c: any) => {
+      return a = !!a ? (a + ',' + c.name) : c.name;
+    }, ''));*/
+  }
+
 }
