@@ -6,3 +6,54 @@
   border-radius: 5px;
   margin: 10px;
 }
+
+
+/* Banner styles */
+.job-search-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  padding: 60px;
+}
+
+.banner-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.banner-heading {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.banner-subheading {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.search-form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.search-input {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 25px;
+  font-size: 18px;
+}
+
+.search-button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 20px;
+  font-size: 18px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+

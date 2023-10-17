@@ -1,7 +1,7 @@
 <div>
  <h3> Add new Job Listing</h3>
   <div class="form-container">
-    <form (submit)="submitJobListing()">
+    <form [formGroup]="jobListingForm" (submit)="submitJobListing()">
 
       <div class="form-group">
         <label for="title">Job Title:</label>

@@ -1,9 +1,21 @@
+.navbar-container {
+  width: 100%;
+}
+
+.navbar-brand {
+  width: 20%;
+}
+
 .navbar {
   background-color: #333;
   color: #fff;
   padding: 10px;
   display: flex;
   justify-content: space-between;
+}
+.navbar ul {
+  width: 60%;
+  display: inline-block;
 }
 
 .navbar .nav-item {
@@ -15,9 +27,15 @@
   color: #fff;
   margin: 0 10px;
 }
+.logged-in {
+  width: 20%;
+  display: inline-block;
+  float: right;
+}
 
 .logged-in img {
   display: inline-block;
   height: 30px;
   width: 30px;
+  vertical-align: middle;
 }

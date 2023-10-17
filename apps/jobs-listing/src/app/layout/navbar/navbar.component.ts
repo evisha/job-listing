@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { RouterModule } from '@angular/router';
-//import { User } from '@realworld/core/api-types';
+import {User} from "../../../../../../libs/auth/data-access/src/lib/data-models/user.model";
 
 @Component({
   selector: 'app-navbar',

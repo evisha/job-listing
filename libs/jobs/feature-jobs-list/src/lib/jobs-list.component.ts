@@ -5,7 +5,6 @@ import { JobListItemComponent } from './job-list-item/job-list-item.component';
 import {Store} from "@ngrx/store";
 import {jobsJSON} from "./jobs";
 import {PagerComponent} from "../../../../ui/components/src";
-import {articleListQuery} from "../../../data-access/src";
 import {of} from "rxjs";
 
 @Component({
@@ -44,5 +43,14 @@ export class JobsListComponent implements OnInit{
 
   setPage(page: number) {
    // this.store.dispatch(articleListActions.setListPage({ page }));
+  }
+
+  searchJobsByKeyword() {
+    // Use the filter method to return an array of objects containing the keyword
+    /*    return jobsJSON.filter(item =>
+      Object.values(item).some(value =>
+        typeof value === 'string' && value.toLowerCase().includes('keyword'.toLowerCase())
+      ));
+      */
   }
 }

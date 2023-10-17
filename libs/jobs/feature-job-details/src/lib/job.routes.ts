@@ -6,7 +6,6 @@ export const JOB_ROUTES: Routes = [
   {
     path: ':slug',
     component: JobDetailsComponent,
-    //providers: [],
-    canActivate: [AppAuthGuard],
+    //canActivate: [AppAuthGuard],
   },
 ];
