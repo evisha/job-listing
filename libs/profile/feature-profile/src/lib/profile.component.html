@@ -8,6 +8,7 @@
             <p><span>Email:</span> johndoe@example.com</p>
             <p><span>Location:</span> New York, USA</p>
             <p><span>Joined:</span> January 1, 20XX</p>
+            <button class="default-button"> Add New Job </button>
           </div>
         </div>
     </div>
@@ -21,7 +22,7 @@
           <input class="search-input" [(ngModel)]="searchTerm" placeholder="Search for job positions" (input)="searchJobs()">
           <ul>
             <li class="job-card job-item" *ngFor="let job of jobs$">
-              <p class="job-title">{{ job.title}}</p>
+              <p class="job-title">{{ job.title}} <button class="edit-button"> Edit Job </button></p>
               <p class="job-description"> Description: {{ job.description}}</p>
               <p class="job-location">Location: {{ job.location}} </p>
             </li>

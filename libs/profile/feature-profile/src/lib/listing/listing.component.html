@@ -1,0 +1,36 @@
+<div>
+ <h3> Add new Job Listing</h3>
+  <div class="form-container">
+    <form (submit)="submitJobListing()">
+
+      <div class="form-group">
+        <label for="title">Job Title:</label>
+        <input type="text" id="title" name="title" formControlName="title">
+      </div>
+
+      <div class="form-group">
+        <label for="company">Company:</label>
+        <input type="text" id="company" name="company" formControlName="company">
+      </div>
+
+      <div class="form-group">
+        <label for="description">Job Description:</label>
+        <textarea id="description" name="description" formControlName="description"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" formControlName="location">
+      </div>
+      <div class="form-group">
+        <label for="location">Salary:</label>
+        <input type="text" id="salary" name="location" formControlName="salary">
+      </div>
+      <div class="form-group">
+        <label for="location">Category:</label>
+        <input type="text" id="category" name="location" formControlName="category">
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
