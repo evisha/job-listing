@@ -9,14 +9,59 @@
 
 To start the development server run `nx serve jobs-listing`. Open your browser and navigate to http://localhost:4200/. Happy coding!
 
+## Functionality overview
 
-## Generate code
+The application is an example of a job listing app.
 
-If you happen to use Nx plugins, you can leverage code generators that might come with it.
 
-Run `nx list` to get a list of available plugins and whether they have generators. Then run `nx list <plugin-name>` to see what generators are available.
+**General functionality:**
 
-Learn more about [Nx generators on the docs](https://nx.dev/plugin-features/use-code-generators).
+- Authenticate users via Firebase (login/signup pages + logout button on navbar component)
+- GET and display paginated list of jobs (mock data used)
+- UserProfile Page (2 Roles Job Posters/Seekers)
+- Job posters can do CRUD Operations Job Listings
+- Job seekers favorite jobs
+### Architecture
+
+#### Folders/Libs structure
+For this project I have created a monorepo. 
+There is one app for the moment (jobs-listing-portal) which consumes the libraries under the libs folder.
+
+The folder structure is:
+~~~
+├── libs
+│   ├── jobs
+│   │   ├── data-access
+│   │   ├── feature-job-details
+│   │   ├── feature-jobs-list
+│   ├── auth
+│   │   ├── data-access
+│   │   ├── feature-auth
+│   ├── core
+│   │   ├── forms
+│   ├── profile
+│   │   ├── data-access
+│   │   ├── feature-profile
+│   ├── ui
+│   │   ├── components
+~~~
+
+I used two classifiers to name the libraries. 
+The first classifier is the `scope` and the second the `type`.
+
+The `scope` is the section (domain) of the app the library can be used.
+It gives a clear indication that a feature belongs to a specific domain. 
+For example the libraries under `profile` scope, are used in the profile and favourite profile pages.
+
+The `type` indicates the purpose of a library. 
+- `Feature` contains smart components.
+- `UI` contains dumb components.
+- `Data Access` contains entities, logic, services, state management.
+- `Util` contains helper functions. TBD
+
+
+#### State management
+**TBD**
 
 ## Running tasks
 

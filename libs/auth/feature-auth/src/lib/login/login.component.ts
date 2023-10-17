@@ -25,6 +25,9 @@ import {
 import {AuthService} from "../../../../data-access/src/lib/services/auth.service";
 import {Store} from "@ngrx/store";
 import { AuthState} from "@jobs-app/auth/data-access";
+import {AngularFirestore, AngularFirestoreCollection} from "@angular/fire/compat/firestore";
+
+
 
 @Component({
   selector: 'app-login',
@@ -34,14 +37,20 @@ import { AuthState} from "@jobs-app/auth/data-access";
 export class LoginComponent implements OnInit {
   public loginForm!: FormGroup;
   hide = true;
+  usersCollection: any[] = []; // Array to store user data as JSON
 
   constructor(
     private _fb: FormBuilder,
     private router: Router,
     private _auth: Auth,
     private aus: AuthService,
+    private afs: AngularFirestore,
     private store: Store<AuthState>
-  ) { }
+  ) {
+    this.afs.collection('users').valueChanges().subscribe((data: any[]) => {
+      this.usersCollection = data;
+    });
+  }
 
   ngOnInit(): void {
     this.loginForm = this._fb.group({
@@ -52,17 +61,15 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-
     const credentials = {
       auth: this._auth,
       username: this.loginForm.get('email')!.value,
       password: this.loginForm.get('password')!.value
     }
     this.aus.login(credentials).then((userCredential) => {
-      // Signed up
-      const user = userCredential;
-      console.log(userCredential)
-      this.fillCache(userCredential.user);
+      // Signed up check user role
+      const roleID = this.usersCollection.find((el: any) => el['UID'] === userCredential.user.uid)  ? 1 : 2;
+      this.fillCache(userCredential.user, roleID);
       // ...
     })
       .catch((error) => {
@@ -72,17 +79,9 @@ export class LoginComponent implements OnInit {
       });
   }
 
-  private fillCache(response: any) {
-
+  private fillCache(response: any, roleID: any) {
     localStorage.setItem('accessToken', response?.accessToken || '');
     localStorage.setItem('refreshToken', response?.refreshToken || '');
-/*    localStorage.setItem('username', response?.first_name + ' ' + response?.last_name);
-    localStorage.setItem('roles', response?.roles?.reduce((a: any, c: any) => {
-      return a = !!a ? (a + ' , ' + c.name) : c.name;
-    }, ''));
-    localStorage.setItem('functions', response?.functions?.reduce((a: any, c: any) => {
-      return a = !!a ? (a + ',' + c.name) : c.name;
-    }, ''));*/
+    localStorage.setItem('roleID', roleID);
   }
-
 }

@@ -31,20 +31,20 @@ export class AppAuthGuard implements CanActivate {
   providedIn: 'root'
 })
 export class RolesGuard implements CanActivate {
-  constructor(private router: Router) {
-  }
+  constructor(private router: Router) {}
 
   canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): boolean {
 
-    /**
-     * Check for existing localStorage,
-     * Make call to get USER INFO DATA
-     * If userinfo role is same as 'ADMIN' => return true, else false
-     */
-    return true;
+    // 1 -> JOB POSTER / ADMIN
+    // 2 -> JOB SEEKER
+    const requiredRole = "1"; // Role required for the route is ADMIN/Job Poster CODE 1
+    // return true User has the required role
+    // return false User doesn't have the required role
+    const userRole = localStorage.getItem('userRole');
+    return userRole === requiredRole
   }
-
 }
 
