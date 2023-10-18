@@ -52,7 +52,6 @@ export class RegisterComponent implements OnInit {
   onSubmit(): void {
     // Initialize Firebase Authentication and get a reference to the service
     const credentials = {
-      auth: this._auth,
       username: this.loginForm.get('email')!.value,
       password: this.loginForm.get('password')!.value
     }

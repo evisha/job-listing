@@ -2,8 +2,8 @@
   <a (click)="navigateToJob.emit(job.title)" class="preview-link">
     <h2 data-e2e-id="job-list-title">{{ job.title }} -  <span class="company"> {{ job.company }}</span> </h2>
   </a>
-  <button [ngClass]="{'btn-outline-primary': !job.favorited, 'btn-primary': job.favorited}">
-    <img src="assets/icons/settings_icon.svg" alt="heart"> Favorite
+  <button class="favorite-button"
+          [ngClass]="{'favorited': job.favorited }"> Favorite
   </button>
   <p class="location">Location: {{ job.location }}</p>
   <p class="salary">Salary: ${{ job.salary }}</p>

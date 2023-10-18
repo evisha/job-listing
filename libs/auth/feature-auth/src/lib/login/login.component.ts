@@ -62,7 +62,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     const credentials = {
-      auth: this._auth,
       username: this.loginForm.get('email')!.value,
       password: this.loginForm.get('password')!.value
     }

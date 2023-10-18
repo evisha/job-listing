@@ -20,6 +20,7 @@
 
 .navbar .nav-item {
   display: inline;
+  cursor: pointer;
 }
 
 .navbar a {

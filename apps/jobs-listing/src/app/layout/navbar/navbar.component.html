@@ -19,24 +19,21 @@
     <ul *ngIf="isLoggedIn" class="nav navbar-nav pull-xs-right">
       <li class="nav-item">
         <!-- Add "active" class when you're on that page" -->
-        <a class="nav-link active"
-          [routerLink]="['/']"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-          >Home</a
-        >
+        <a class="nav-link active" [routerLink]="['/']"
+          routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/editor" routerLinkActive="active">
-          <i class="ion-compose"></i>&nbsp;New Job
-        </a>
+        <a class="nav-link" routerLink="/editor" routerLinkActive="active"> &nbsp;New Job </a>
       </li>
     </ul>
-    <div class="logged-in">
+    <div class="logged-in" *ngIf="isLoggedIn">
       <li class="nav-item">
         <a data-e2e-id="loggedin-user" class="nav-link" [routerLink]="['/profile']" routerLinkActive="active">
           <img [src]="'../assets/user-avatar.svg'"  class="user-pic" /> UserName
         </a>
+      </li>
+      <li class="nav-item logout">
+          <img (click)="logout()" [src]="'../assets/logout_icon.svg'"  class="user-pic" />
       </li>
     </div>
   </div>

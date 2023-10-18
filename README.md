@@ -17,17 +17,16 @@ The application is an example of a job listing app.
 **General functionality:**
 
 - Authenticate users via Firebase (login/signup pages + logout button on navbar component)
-- GET and display paginated list of jobs (mock data used)
-- UserProfile Page (2 Roles Job Posters/Seekers)
-- Job posters can do CRUD Operations Job Listings
-- Job seekers favorite jobs
+- GET and display list of jobs (mock data used)
+- UserProfile Page (Manage 2 Roles: Job Posters/Seekers)
+- Job posters can do CRUD Operations Job Listings (via Firebase)
+- Job seekers can add favorite jobs
 ### Architecture
 
 #### Folders/Libs structure
 For this project I have created a monorepo. 
 There is one app for the moment (jobs-listing-portal) which consumes the libraries under the libs folder.
-
-The folder structure is:
+The libs folder structure is as below:
 ~~~
 ├── libs
 │   ├── jobs
@@ -46,13 +45,9 @@ The folder structure is:
 │   │   ├── components
 ~~~
 
-I used two classifiers to name the libraries. 
-The first classifier is the `scope` and the second the `type`.
+Naming of the libraries is done by using `scope` and `type` classifiers.
 
-The `scope` is the section (domain) of the app the library can be used.
-It gives a clear indication that a feature belongs to a specific domain. 
-For example the libraries under `profile` scope, are used in the profile and favourite profile pages.
-
+The `scope` is an indication that a feature belongs to a specific domain. 
 The `type` indicates the purpose of a library. 
 - `Feature` contains smart components.
 - `UI` contains dumb components.
