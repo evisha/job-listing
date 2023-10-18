@@ -7,7 +7,7 @@
 }
 
 .navbar {
-  background-color: #333;
+  background-color: #111111;
   color: #fff;
   padding: 10px;
   display: flex;
@@ -16,6 +16,8 @@
 .navbar ul {
   width: 60%;
   display: inline-block;
+  height: 30px;
+  vertical-align: middle;
 }
 
 .navbar .nav-item {
@@ -27,6 +29,7 @@
   text-decoration: none;
   color: #fff;
   margin: 0 10px;
+  line-height: 30px;
 }
 .logged-in {
   width: 20%;
