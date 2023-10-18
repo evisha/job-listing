@@ -1,7 +1,8 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {ActivatedRoute} from "@angular/router";
 import {JobsService} from "../../../data-access/src/lib/services/jobs.service";
+import {Job} from "../../../data-access/src";
 
 @Component({
   selector: 'app-job-details',
@@ -11,7 +12,7 @@ import {JobsService} from "../../../data-access/src/lib/services/jobs.service";
   imports: [CommonModule]
 })
 export class JobDetailsComponent implements OnInit {
-  public job: any;
+  public job!: Job;
   public loading = true; // Add a loading indicator
   constructor(private route: ActivatedRoute, private js: JobsService) {
   }

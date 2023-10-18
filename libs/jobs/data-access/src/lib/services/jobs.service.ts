@@ -20,11 +20,9 @@ export class JobsService {
     return this.afs.collection("jobs").doc(slug).get()
   }
 
-
   addFavorite(slug: string, payload = ''): Observable<any> {
     return of(jobsJSON);
   }
-
 
   publishJob(job: any): Observable<any> {
     return of(jobsJSON);

@@ -45,7 +45,6 @@ export class ProfileComponent implements OnInit {
       "category": "Graphic Design"
     }
   ];
-
   appliedJobs$: any[] = [
     {
       "id": 1,

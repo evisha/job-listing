@@ -1,14 +1,9 @@
-
-export interface SingleCommentResponse {
-  comment: Comment;
-}
-
-export interface MultipleCommentsResponse {
-  comments: Comment[];
-}
-
-export interface Comment {
+export interface Job {
   id: number;
-  body: string;
-  createdAt: string;
+  title: string;
+  description: string;
+  company: string;
+  salary: number;
+  location: string;
+  category?: string
 }
