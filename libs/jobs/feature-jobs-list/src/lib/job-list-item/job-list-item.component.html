@@ -5,9 +5,9 @@
   <button class="favorite-button"
           [ngClass]="{'favorited': job.favorited }"> Favorite
   </button>
+  <p class="description">{{ job.description }}</p>
   <p class="location">Location: {{ job.location }}</p>
   <p class="salary">Salary: ${{ job.salary }}</p>
-  <p class="description">{{ job.description }}</p>
   <a (click)="navigateToJob.emit(job.id)" class="preview-link">
     <span>Read more...</span>
   </a>

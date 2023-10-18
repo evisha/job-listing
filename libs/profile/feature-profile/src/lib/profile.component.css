@@ -49,12 +49,21 @@
 }
 
 .jobs-sections ul {
+  margin: 15px 0;
   list-style-type: none; /* Remove default list bullets */
   padding-left: 0; /* Remove default padding */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.jobs-sections h3 {
+  margin: 15px 0;
+}
+
+.favoritedJobs, .applied {
+  margin: 15px 0;
 }
 
 .jobs-sections ul  li {
@@ -90,7 +99,7 @@
 }
 
 .default-button {
-  background-color: #007bff;
+  background-color: #1b41ff;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -117,4 +126,21 @@
 
 .edit-button:hover {
   background-color: #999;
+}
+
+.favorite-button {
+  background-color: #f8f8f8;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  float: right;
+}
+
+.favorite-button:hover, .favorited {
+  background-color: #ff5733;
+  color: #fff;
 }

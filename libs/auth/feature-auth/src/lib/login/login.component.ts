@@ -69,7 +69,6 @@ export class LoginComponent implements OnInit {
       // Signed up check user role
       const roleID = this.usersCollection.find((el: any) => el['UID'] === userCredential.user.uid)  ? 1 : 2;
       this.fillCache(userCredential.user, roleID);
-      this.router.navigateByUrl('profile');
     })
       .catch((error) => {
         const errorCode = error.code;
@@ -82,5 +81,6 @@ export class LoginComponent implements OnInit {
     localStorage.setItem('accessToken', response?.accessToken || '');
     localStorage.setItem('refreshToken', response?.refreshToken || '');
     localStorage.setItem('roleID', roleID);
+    this.router.navigateByUrl('profile');
   }
 }

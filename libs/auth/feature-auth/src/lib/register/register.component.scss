@@ -104,6 +104,7 @@ button {
   border: none;
   margin: 10% 0;
   font-family: $text-family-title;
+  cursor: pointer;
 
   &.active {
     background-color: $primary;

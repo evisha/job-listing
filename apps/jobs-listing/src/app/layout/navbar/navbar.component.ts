@@ -1,7 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
-import {Router, RouterModule} from '@angular/router';
-import {User} from "../../../../../../libs/auth/data-access/src/lib/data-models/user.model";
+import {Component, Input, ChangeDetectionStrategy, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {AuthService} from "../../../../../../libs/auth/data-access/src/lib/services/auth.service";
 
 @Component({
@@ -10,9 +8,11 @@ import {AuthService} from "../../../../../../libs/auth/data-access/src/lib/servi
   styleUrls: ['./navbar.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   isLoggedIn = false;
-  constructor(private aus: AuthService, private router: Router) {
+  constructor(private aus: AuthService, private router: Router) {}
+
+  ngOnInit() {
     this.isLoggedIn = !!localStorage.getItem('accessToken');
   }
 
@@ -20,6 +20,7 @@ export class NavbarComponent {
     return this.aus.logout().then(() => {
       // Sign-out successful
       localStorage.clear();
+      this.isLoggedIn = false;
       this.router.navigateByUrl('/');
     }).catch((error) => {
       // An error happened.

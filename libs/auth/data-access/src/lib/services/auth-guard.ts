@@ -43,7 +43,7 @@ export class RolesGuard implements CanActivate {
     const requiredRole = "1"; // Role required for the route is ADMIN/Job Poster CODE 1
     // return true User has the required role
     // return false User doesn't have the required role
-    const userRole = localStorage.getItem('userRole');
+    const userRole = localStorage.getItem('roleID');
     return userRole === requiredRole
   }
 }

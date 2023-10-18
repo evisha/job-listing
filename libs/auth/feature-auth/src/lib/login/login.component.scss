@@ -29,7 +29,6 @@ $topbar-height: 80px;
   background-color: black;
   float: left;
   width: 31.25%;
-  height: 100%;
   position: relative;
   height: 100vh; // TODO Change
 }
@@ -104,6 +103,7 @@ button {
   border: none;
   margin: 10% 0;
   font-family: $text-family-title;
+  cursor: pointer;
 
   &.active {
     background-color: $primary;

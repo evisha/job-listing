@@ -8,21 +8,52 @@
             <p><span>Email:</span> johndoe@example.com</p>
             <p><span>Location:</span> New York, USA</p>
             <p><span>Joined:</span> January 1, 20XX</p>
-            <button class="default-button"> Add New Job </button>
+            <button *ngIf="isAdmin" class="default-button" [routerLink]="['/add']"> Add New Job </button>
           </div>
         </div>
     </div>
   </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-10 offset-md-1">
-        <div class="jobs-sections">
-          <h3> My Jobs </h3>
+
+
+  <ng-container *ngIf="isAdmin; else isJobSeeker">
+    <div class="container">
+      <div class="row">
+          <div class="jobs-sections">
+            <h3> My Listings </h3>
+            <input class="search-input" [(ngModel)]="searchTerm" placeholder="Search for job positions" (input)="searchJobs()">
+            <ul>
+              <li class="job-card job-item" *ngFor="let job of jobs$">
+                <p class="job-title">{{ job.title}} <button class="edit-button"> Edit Job </button></p>
+                <p class="job-description"> Description: {{ job.description}}</p>
+                <p class="job-location">Location: {{ job.location}} </p>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #isJobSeeker>
+    <div class="container">
+      <div class="row">
+        <div class="jobs-sections favoritedJobs">
+          <h3> My Favorites </h3>
           <input class="search-input" [(ngModel)]="searchTerm" placeholder="Search for job positions" (input)="searchJobs()">
           <ul>
-            <li class="job-card job-item" *ngFor="let job of jobs$">
-              <p class="job-title">{{ job.title}} <button class="edit-button"> Edit Job </button></p>
+            <li class="job-card job-item" *ngFor="let job of favoriteJobs$">
+              <p class="job-title">{{ job.title}} <button class="favorite-button favorited"> Favorite </button></p>
+              <p class="job-description"> Description: {{ job.description}}</p>
+              <p class="job-location">Location: {{ job.location}} </p>
+            </li>
+          </ul>
+        </div>
+        <div class="jobs-sections applied">
+          <h3> Applied </h3>
+          <input class="search-input" [(ngModel)]="searchTerm" placeholder="Search for job positions" (input)="searchJobs()">
+          <ul>
+            <li class="job-card job-item" *ngFor="let job of appliedJobs$">
+              <p class="job-title">{{ job.title}}</p>
               <p class="job-description"> Description: {{ job.description}}</p>
               <p class="job-location">Location: {{ job.location}} </p>
             </li>
@@ -30,5 +61,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </ng-template>
 </div>
