@@ -41,20 +41,20 @@ export class JobsListComponent implements OnInit{
     this.router.navigate(['/job', slug]);
   }
 
-
-  searchJobsByKeyword() {
-    console.log(this.searchTerm);
-    if (!this.searchTerm) {
-      return this.jobs;
-    } else {
-      // Use the filter method to return an array of objects containing the keyword
-      return this.jobs.filter((item) => {
-        Object.values(item).some(value =>
-          typeof value === 'string' && value.toLowerCase().includes(this.searchTerm.toLowerCase())
-        )});
-    }
-
-
+  // Function to search for jobs by keyword
+   searchJobsByKeyword() {
+     if (!this.searchTerm) {
+       this.loadMoreData()
+     } else {
+       const _searchTerm = this.searchTerm.toLowerCase();
+      this.jobs = this.jobs.filter((job) => {
+         return (
+           job?.title.toLowerCase().includes(_searchTerm) ||
+           job?.description.toLowerCase().includes(_searchTerm) ||
+           job?.company.toLowerCase().includes(_searchTerm)
+         );
+       });
+     }
   }
 
   @HostListener('window:scroll', ['$event'])
