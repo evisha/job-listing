@@ -4,7 +4,6 @@ import {NgModule} from "@angular/core";
 import {ListingComponent} from "./listing/listing.component";
 import {AppAuthGuard, RolesGuard} from "../../../../auth/data-access/src/lib/services/auth-guard";
 
-
 const routes: Routes = [
   {
     path: 'profile',
@@ -21,7 +20,11 @@ const routes: Routes = [
   {
     path: 'add',
     component: ListingComponent
-  }
+  },
+  {
+    path: 'edit/:slug',
+    component: ListingComponent,
+  },
 ];
 
 @NgModule({

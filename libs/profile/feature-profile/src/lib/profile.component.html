@@ -2,7 +2,7 @@
   <div class="profile-info">
       <div class="row">
         <div class="profile-picture">
-          <img class="user-img" src="assets/icons/settings_icon.svg" />
+          <img class="user-img" src="assets/icons/settings_icon.svg"/>
           <div class="profile-info">
             <h1>John Doe</h1>
             <p><span>Email:</span> johndoe@example.com</p>
@@ -24,7 +24,7 @@
             <input class="search-input" [(ngModel)]="searchTerm" placeholder="Search for job positions" (input)="searchJobs()">
             <ul>
               <li class="job-card job-item" *ngFor="let job of jobs$">
-                <p class="job-title">{{ job.title}} <button class="edit-button"> Edit Job </button></p>
+                <p class="job-title">{{ job.title}} <button class="edit-button" (click)="goToEditor(job.id)"> Edit Job </button></p>
                 <p class="job-description"> Description: {{ job.description}}</p>
                 <p class="job-location">Location: {{ job.location}} </p>
               </li>

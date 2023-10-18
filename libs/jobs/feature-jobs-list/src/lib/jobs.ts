@@ -6,8 +6,6 @@ export const jobsJSON = [
     "location": "New York",
     "company": "Company 1",
     "salary": 80000,
-    "datePosted": "2023-10-16T10:41:45.620Z",
-    "postedBy": "User123",
     "category": "Software Development"
   },
   {
@@ -17,8 +15,6 @@ export const jobsJSON = [
     "location": "Los Angeles",
     "company": "Company 1",
     "salary": 60000,
-    "datePosted": "2023-10-17T12:41:45.620Z",
-    "postedBy": "User22",
     "category": "Graphic Design"
   },
   {
@@ -28,8 +24,6 @@ export const jobsJSON = [
     "location": "Los Angeles",
     "company": "Company 1",
     "salary": 55000,
-    "datePosted": "2023-10-15T10:41:45.620Z",
-    "postedBy": "TestUser2",
     "category": "Graphic Design"
   },
   {
@@ -39,8 +33,6 @@ export const jobsJSON = [
     "location": "Berlin",
     "company": "Company 1",
     "salary": 70000,
-    "datePosted": "2023-09-16T10:41:45.620Z",
-    "postedBy": "User99",
     "category": "Finance"
   },
   {
@@ -50,8 +42,6 @@ export const jobsJSON = [
     "location": "Frankfurt",
     "company": "Company 1",
     "salary": 70000,
-    "datePosted": "2023-08-16T10:41:45.620Z",
-    "postedBy": "User00",
     "category": "Engineering"
   },
   {
@@ -61,8 +51,6 @@ export const jobsJSON = [
     "location": "Vienna",
     "company": "Company F",
     "salary": 75000,
-    "datePosted": "2023-09-16T18:41:45.620Z",
-    "postedBy": "Usr99",
     "category": "Engineering"
   },
   {
@@ -72,8 +60,6 @@ export const jobsJSON = [
     "location": "Berlin",
     "company": "Company 1",
     "salary": 80000,
-    "datePosted": "2023-08-16T10:41:45.620Z",
-    "postedBy": "User001",
     "category": "Engineering",
   },
   {
@@ -83,8 +69,6 @@ export const jobsJSON = [
     "location": "Vienna",
     "company": "Company F",
     "salary": 75000,
-    "datePosted": "2023-09-16T18:41:45.620Z",
-    "postedBy": "Usr99",
     "category": "Engineering"
   },
   {
@@ -94,8 +78,6 @@ export const jobsJSON = [
     "location": "Berlin",
     "company": "Company 1",
     "salary": 80000,
-    "datePosted": "2023-08-16T10:41:45.620Z",
-    "postedBy": "User001",
     "category": "Engineering"
   },
   {
@@ -105,8 +87,6 @@ export const jobsJSON = [
     "location": "Berlin",
     "company": "Company 1",
     "salary": 70000,
-    "datePosted": "2023-09-16T10:41:45.620Z",
-    "postedBy": "User99",
     "category": "Finance"
   },
   {
@@ -116,8 +96,6 @@ export const jobsJSON = [
     "location": "Frankfurt",
     "company": "CompanyB1",
     "salary": 70000,
-    "datePosted": "2023-08-16T10:41:45.620Z",
-    "postedBy": "User00",
     "category": "Engineering"
   },
   {
@@ -127,8 +105,6 @@ export const jobsJSON = [
     "location": "Vienna",
     "company": "G&F",
     "salary": 75000,
-    "datePosted": "2023-09-16T18:41:45.620Z",
-    "postedBy": "Usr99",
     "category": "Engineering"
   },
   {
@@ -138,8 +114,6 @@ export const jobsJSON = [
     "location": "Berlin",
     "company": "PGB 1",
     "salary": 80500,
-    "datePosted": "2023-08-16T10:41:45.620Z",
-    "postedBy": "User001",
     "category": "Engineering",
   },
   {
@@ -149,8 +123,6 @@ export const jobsJSON = [
     "location": "New York",
     "company": "Company 1",
     "salary": 70000,
-    "datePosted": "2023-10-16T10:41:45.620Z",
-    "postedBy": "User123",
     "category": "Software Development"
   },
   {
@@ -160,8 +132,6 @@ export const jobsJSON = [
     "location": "Tirana",
     "company": "POP 1",
     "salary": 60000,
-    "datePosted": "2023-10-17T12:41:45.620Z",
-    "postedBy": "User22",
     "category": "Graphic Design"
   },
   {
@@ -171,8 +141,6 @@ export const jobsJSON = [
     "location": "Athens",
     "company": "XCV 1",
     "salary": 50000,
-    "datePosted": "2023-10-15T10:41:45.620Z",
-    "postedBy": "TestUser2",
     "category": "Graphic Design"
   },
 ]
