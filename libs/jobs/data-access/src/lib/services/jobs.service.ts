@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
 import {Observable, of} from 'rxjs';
 import {jobsJSON} from "../../../../feature-jobs-list/src/lib/jobs";
+import {AngularFirestore} from "@angular/fire/compat/firestore";
 
 @Injectable({ providedIn: 'root' })
 export class JobsService {
+
+  constructor(private afs: AngularFirestore) {
+  }
 
   getJobs(page: number, pageSize: number ): Observable<any> {
     // mock pagination
@@ -13,7 +17,7 @@ export class JobsService {
   }
 
   getJob(slug: string): Observable<any> {
-    return of(jobsJSON[1]);
+    return this.afs.collection("jobs").doc(slug).get()
   }
 
 

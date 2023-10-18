@@ -1,12 +1,14 @@
-<div class="job-details-container">
+<div class="job-details-container" *ngIf="!loading; else jobLoading">
   <header>
-    <h1>Job Title</h1>
-    <p class="location">Location: City, State</p>
+    <h1>{{job?.title }}</h1>
+    <p class="location">Location: {{job?.location}}</p>
   </header>
 
   <section class="job-description">
     <h2>Job Description</h2>
     <p>
+      {{ job?.description }}
+      <br>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida
       elit ut ante fringilla, a tincidunt arcu dignissim. Sed accumsan nunc ac
       libero sollicitudin, eget volutpat libero laoreet.
@@ -24,7 +26,15 @@
   </section>
 
   <footer>
-    <p class="salary">Salary: $60,000 - $80,000 per year</p>
+    <p class="salary">Salary: {{ job?.salary }} per year</p>
     <button class="apply-button">Apply Now</button>
   </footer>
+
 </div>
+
+<ng-template #jobLoading>
+  <div class="job-details-container">
+    <!-- Show a loading indicator here -->
+    <p>Loading...</p>
+  </div>
+</ng-template>

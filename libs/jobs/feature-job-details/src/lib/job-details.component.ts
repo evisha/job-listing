@@ -1,20 +1,33 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, inject } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {CommonModule} from "@angular/common";
-
+import {ActivatedRoute} from "@angular/router";
+import {JobsService} from "../../../data-access/src/lib/services/jobs.service";
 
 @Component({
   selector: 'app-job-details',
   standalone: true,
   templateUrl: './job-details.component.html',
   styleUrls: ['./job-details.component.css'],
-  imports: [CommonModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule]
 })
-export class JobDetailsComponent implements OnInit, OnDestroy {
-  ngOnDestroy(): void {
+export class JobDetailsComponent implements OnInit {
+  public job: any;
+  public loading = true; // Add a loading indicator
+  constructor(private route: ActivatedRoute, private js: JobsService) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      const jobId = params['slug'];
+      this.js.getJob(jobId).subscribe(doc => {
+        console.log("Document data:", doc.data());
+        this.job = doc.data()
+        this.loading = false; // Turn off the loading indicator when data is received
+      }, (error) => {
+        console.error('Error fetching data:', error);
+        this.loading = false; // Turn off the loading indicator in case of an error
+      })
+    });
   }
 /* // private readonly store = inject(Store);
 
@@ -25,20 +38,10 @@ export class JobDetailsComponent implements OnInit, OnDestroy {
   data$ = this.store.select(ngrxFormsQuery.selectData);
   currentUser$ = this.store.select(selectUser);
 
-  ngOnInit() {
-  }
 
+  favorite(slug: string) {}
 
-  favorite(slug: string) {
-
-  }
-  unfavorite(slug: string) {
-
-  }
-
-  ngOnDestroy() {
-    //this.store.dispatch(articleActions.initializeArticle());
-  }
+  unfavorite(slug: string) {}
 
  */
 }

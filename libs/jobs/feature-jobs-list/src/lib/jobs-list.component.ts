@@ -2,10 +2,6 @@ import { CommonModule } from '@angular/common';
 import {ChangeDetectionStrategy, Component, HostListener, inject, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { JobListItemComponent } from './job-list-item/job-list-item.component';
-import {Store} from "@ngrx/store";
-import {jobsJSON} from "./jobs";
-import {PagerComponent} from "../../../../ui/components/src";
-import {of} from "rxjs";
 import {JobsService} from "../../../data-access/src/lib/services/jobs.service";
 
 @Component({
@@ -13,11 +9,11 @@ import {JobsService} from "../../../data-access/src/lib/services/jobs.service";
   standalone: true,
   templateUrl: './jobs-list.component.html',
   styleUrls: ['./jobs-list.component.css'],
-  imports: [CommonModule, JobListItemComponent, PagerComponent],
+  imports: [CommonModule, JobListItemComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class JobsListComponent implements OnInit{
-  private readonly store = inject(Store);
+  //private readonly store = inject(Store);
   private readonly router = inject(Router);
   jobs$: any[] = [];
   currentPage = 1;
@@ -45,11 +41,10 @@ export class JobsListComponent implements OnInit{
 
   searchJobsByKeyword() {
     // Use the filter method to return an array of objects containing the keyword
-    /*    return jobsJSON.filter(item =>
+    return this.jobs$.filter((item) => {
       Object.values(item).some(value =>
         typeof value === 'string' && value.toLowerCase().includes('keyword'.toLowerCase())
-      ));
-      */
+      )});
   }
 
   @HostListener('window:scroll', ['$event'])

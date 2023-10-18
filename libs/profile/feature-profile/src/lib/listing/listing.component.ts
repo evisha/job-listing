@@ -25,8 +25,6 @@ export class ListingComponent {
 
   submitJobListing() {
     // Create a custom document reference with a numeric ID
-    const usersCollection = this.afs.collection('jobs');
-    console.log('Job Listing Submitted:', this.jobListingForm.value);
     this.afs.collection('jobs').doc(this.getRandomIntAsID()).set(this.jobListingForm.value)
       .then(() => {
         console.log("Document successfully written!");
