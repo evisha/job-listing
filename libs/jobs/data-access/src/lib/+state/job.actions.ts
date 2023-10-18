@@ -1,6 +1,6 @@
 import { createActionGroup, props } from '@ngrx/store';
 
-export const articlesActions = createActionGroup({
+export const jobActions = createActionGroup({
   source: 'Articles',
   events: {
     favorite: props<{ slug: string }>(),

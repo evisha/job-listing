@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import {ChangeDetectionStrategy, Component, inject, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, HostListener, inject, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { JobListItemComponent } from './job-list-item/job-list-item.component';
 import {Store} from "@ngrx/store";
 import {jobsJSON} from "./jobs";
 import {PagerComponent} from "../../../../ui/components/src";
 import {of} from "rxjs";
+import {JobsService} from "../../../data-access/src/lib/services/jobs.service";
 
 @Component({
   selector: 'cdt-article-list',
@@ -18,32 +19,29 @@ import {of} from "rxjs";
 export class JobsListComponent implements OnInit{
   private readonly store = inject(Store);
   private readonly router = inject(Router);
-  jobs$ = of(jobsJSON);
+  jobs$: any[] = [];
+  currentPage = 1;
+  pageSize = 5;
 
-  ngOnInit() {
-
+  constructor(private  js: JobsService) {
   }
 
-  /*  totalPages$ = this.store.select(articleListQuery.selectTotalPages);
-    jobs$ = this.store.select(articleListQuery.selectArticleEntities);
-    //listConfig$ = this.store.select(articleListQuery.selectListConfig);
-    isLoading$ = this.store.select(articleListQuery.isLoading);*/
+  ngOnInit() {
+    this.loadMoreData();
+  }
 
   favorite(slug: string) {
-   // this.store.dispatch(articlesActions.favorite({ slug }));
+   // this.store.dispatch(jobActions.favorite({ slug }));
   }
 
   unFavorite(slug: string) {
-   // this.store.dispatch(articlesActions.unfavorite({ slug }));
+   // this.store.dispatch(jobActions.unfavorite({ slug }));
   }
 
   navigateToJob(slug: string) {
     this.router.navigate(['/job', slug]);
   }
 
-  setPage(page: number) {
-   // this.store.dispatch(articleListActions.setListPage({ page }));
-  }
 
   searchJobsByKeyword() {
     // Use the filter method to return an array of objects containing the keyword
@@ -52,5 +50,21 @@ export class JobsListComponent implements OnInit{
         typeof value === 'string' && value.toLowerCase().includes('keyword'.toLowerCase())
       ));
       */
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: Event): void {
+    if (
+      window.innerHeight + window.scrollY >= document.body.scrollHeight - 1
+    ) {
+      this.loadMoreData();
+    }
+  }
+
+  loadMoreData() {
+    this.js.getJobs(this.currentPage, this.pageSize).subscribe((response) => {
+      this.jobs$ = this.jobs$.concat(response); // Add new data to the existing data
+      this.currentPage++;
+    });
   }
 }
