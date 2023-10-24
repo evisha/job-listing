@@ -14,6 +14,7 @@ export class ProfileComponent implements OnInit {
   username!: string;
   jobs$: Job[] = jobsJSON;
   searchTerm: any;
+  favSearchTerm: any;
   userJobs: any;
   favoriteJobs$: Job[]  = favoriteJobsJSON;
   appliedJobs$: Job[] = appliedJobsJSON;
@@ -31,6 +32,16 @@ export class ProfileComponent implements OnInit {
       );
     }
   }
+
+  /*searchFavoriteJobs() {
+    if (!this.favSearchTerm) {
+      this.favoriteJobs$ = favoriteJobsJSON;
+    } else {
+      this.favoriteJobs$ = favoriteJobsJSON.filter((job) =>
+        job.title.toLowerCase().includes(this.searchTerm.toLowerCase())
+      );
+    }
+  }*/
 
   goToEditor(jobId: number) {
     this.router.navigate(['/edit', jobId]);

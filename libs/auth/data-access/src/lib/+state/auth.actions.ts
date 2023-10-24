@@ -1,14 +1,11 @@
-import { createAction, props } from '@ngrx/store';
-import { AuthEntity } from './auth.models';
+import {createActionGroup, emptyProps, props} from '@ngrx/store';
+import {User} from "../data-models/user.model";
 
-export const initAuth = createAction('[Auth Page] Init');
-
-export const loadAuthSuccess = createAction(
-  '[Auth/API] Load Auth Success',
-  props<{ auth: AuthEntity[] }>()
-);
-
-export const loadAuthFailure = createAction(
-  '[Auth/API] Load Auth Failure',
-  props<{ error: any }>()
-);
+export const authActions = createActionGroup({
+  source: 'Auth',
+  events: {
+    getUser: emptyProps(),
+    getUserFailure: props<{ error: Error }>(),
+    getUserSuccess: props<{ user: User }>(),
+  },
+});

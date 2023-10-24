@@ -5,15 +5,16 @@ import {AuthService} from "../../../../../../libs/auth/data-access/src/lib/servi
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  isLoggedIn = false;
-  constructor(private aus: AuthService, private router: Router) {}
+  @Input() isLoggedIn = false;
+  constructor(private aus: AuthService, private router: Router) {
+    //this.isLoggedIn = !!localStorage.getItem('accessToken');
+  }
 
   ngOnInit() {
-    this.isLoggedIn = !!localStorage.getItem('accessToken');
+
   }
 
   logout() {

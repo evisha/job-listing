@@ -8,12 +8,11 @@
             <p><span>Email:</span> johndoe@example.com</p>
             <p><span>Location:</span> New York, USA</p>
             <p><span>Joined:</span> January 1, 20XX</p>
-            <button *ngIf="isAdmin" class="default-button" [routerLink]="['/add']"> Add New Job </button>
+            <button *ngIf="isAdmin" class="default-button" style="margin: 20px 0" [routerLink]="['/add']"> Add New Job </button>
           </div>
         </div>
     </div>
   </div>
-
 
 
   <ng-container *ngIf="isAdmin; else isJobSeeker">
@@ -39,7 +38,7 @@
       <div class="row">
         <div class="jobs-sections favoritedJobs">
           <h3> My Favorites </h3>
-          <input class="search-input" [(ngModel)]="searchTerm" placeholder="Search for job positions" (input)="searchJobs()">
+          <!--<input class="search-input" [(ngModel)]="favSearchTerm" placeholder="Search for job positions" (input)="searchFavoriteJobs()">-->
           <ul>
             <li class="job-card job-item" *ngFor="let job of favoriteJobs$">
               <p class="job-title">{{ job.title}} <button class="favorite-button favorited"> Favorite </button></p>
@@ -49,8 +48,7 @@
           </ul>
         </div>
         <div class="jobs-sections applied">
-          <h3> Applied </h3>
-          <input class="search-input" [(ngModel)]="searchTerm" placeholder="Search for job positions" (input)="searchJobs()">
+          <h3> Applied Jobs </h3>
           <ul>
             <li class="job-card job-item" *ngFor="let job of appliedJobs$">
               <p class="job-title">{{ job.title}}</p>

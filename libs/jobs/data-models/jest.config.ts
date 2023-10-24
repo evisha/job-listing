@@ -1,10 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'jobs-data-access',
-
+  displayName: 'data-models',
+  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  globals: {},
-  coverageDirectory: '../../../coverage/libs/articles/data-access',
+  coverageDirectory: '../../../coverage/libs/jobs/data-models',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
@@ -20,5 +19,4 @@ export default {
     'jest-preset-angular/build/serializers/ng-snapshot',
     'jest-preset-angular/build/serializers/html-comment',
   ],
-  preset: '../../../jest.preset.js',
 };

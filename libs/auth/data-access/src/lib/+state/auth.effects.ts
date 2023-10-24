@@ -1,21 +1,20 @@
 import { Injectable, inject } from '@angular/core';
 import { createEffect, Actions, ofType } from '@ngrx/effects';
-import { switchMap, catchError, of } from 'rxjs';
-import * as AuthActions from './auth.actions';
-import * as AuthFeature from './auth.reducer';
+import {switchMap, catchError, of, map} from 'rxjs';
+import {AuthService} from "../services/auth.service";
+import {authActions} from "./auth.actions";
 
-@Injectable()
-export class AuthEffects {
-  private actions$ = inject(Actions);
-
-  init$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(AuthActions.initAuth),
-      switchMap(() => of(AuthActions.loadAuthSuccess({ auth: [] }))),
-      catchError((error) => {
-        console.error('Error', error);
-        return of(AuthActions.loadAuthFailure({ error }));
-      })
-    )
-  );
-}
+export const getUser$ = createEffect(
+  (actions$ = inject(Actions), authService = inject(AuthService)) => {
+    return actions$.pipe(
+      ofType(authActions.getUser),
+      switchMap(() =>
+        authService.user().pipe(
+          map((data) => authActions.getUserSuccess({ user: data.user })),
+          catchError((error) => of(authActions.getUserFailure({ error }))),
+        ),
+      ),
+    );
+  },
+  { functional: true },
+);

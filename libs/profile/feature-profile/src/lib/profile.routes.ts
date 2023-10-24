@@ -8,22 +8,17 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
-      children: [
-        { path: 'add',
-          component: ListingComponent,
-          canActivate: [RolesGuard,
-            AppAuthGuard]
-        },
-      ],
     canActivate: [AppAuthGuard],
   },
   {
     path: 'add',
-    component: ListingComponent
+    component: ListingComponent,
+    canActivate: [RolesGuard, AppAuthGuard]
   },
   {
     path: 'edit/:slug',
     component: ListingComponent,
+    canActivate: [RolesGuard, AppAuthGuard]
   },
 ];
 

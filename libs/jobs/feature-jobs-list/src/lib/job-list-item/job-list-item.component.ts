@@ -16,6 +16,7 @@ export class JobListItemComponent {
   @Output() favorite: EventEmitter<string> = new EventEmitter();
   @Output() unFavorite: EventEmitter<string> = new EventEmitter();
   @Output() navigateToJob: EventEmitter<string> = new EventEmitter();
+  isClassActive: boolean = false;
 
   toggleFavorite(job: any) {
     if (job.favorited) {

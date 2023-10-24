@@ -7,7 +7,12 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'jobs-listing';
+  isLoggedIn = false;
+
+  constructor() {
+  }
 
   ngOnInit() {
+    this.isLoggedIn = !!localStorage.getItem('accessToken');
   }
 }

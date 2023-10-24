@@ -64,6 +64,7 @@
 
 .favoritedJobs, .applied {
   margin: 15px 0;
+  text-align: center;
 }
 
 .jobs-sections ul  li {
